@@ -32,6 +32,7 @@ for line in xfile:
     if line.startswith('b'):
         print (line)
 
+
 xfile = open('/Users/zhuerika/Desktop/absentees.txt', 'r')
 for line in xfile:
     line = line.rstrip()
@@ -64,6 +65,8 @@ for line in fhand:
     else:
         continue
 print (s / count)
+
+
 
 filename = input('Enter the filename: ')
 fhand = open(filename)

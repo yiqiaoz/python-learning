@@ -56,10 +56,13 @@ def lecture6():
     y = re.findall('^F.+:',x)
     print (y)
 
+
     import re
     x = 'From: Using the: character'
     y = re.findall('^F.+?:', x)  # non-greedy
     print (y)
+
+
 
 def lecture7():
     import re
@@ -68,12 +71,16 @@ def lecture7():
     print (y)
 
 
+
 def lecture8():
     # extracting less than matching by using ()
     import re
     x = 'From yzz5070@gmail.com Thu Jan  11 08:08:08 2018'
     y = re.findall('^From (\S+@\S+)', x)  # \S is non-blank character
     print (y)
+
+
+
 
 def lecture9():
     # extracting host using find and string slicing
@@ -85,6 +92,7 @@ def lecture9():
     host = data[atpos+1: stopus]
     print (host)
 
+
     #double split
     data = 'From yzz5070@gmail.com Thu Jan  11 08:08:08 2018'
     words = data.split()
@@ -93,16 +101,19 @@ def lecture9():
     host = piece[1]
     print (host)
 
+
     #Regex
     import re
     data = 'From yzz5070@gmail.com Thu Jan  11 08:08:08 2018'
     host = re.findall('@([^ ]*)', data)   # [^ ] match non-blank character
     print (host)
 
+
     import re
     data = 'From yzz5070@gmail.com Thu Jan  11 08:08:08 2018'
     host = re.findall('^From .*@([^ ]*)', data)  # [^ ] match non-blank character
     print (host)
+
 
 def exercise1():
     import re
@@ -152,4 +163,4 @@ def assignment1():
 
 
 if __name__=='__main__':
-    assignment1()
+    lecture8()

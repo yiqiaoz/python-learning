@@ -9,7 +9,7 @@
 #for the web to retrieve HTML, Images, docs...etc.
 # make a connection - request a document - retrieve the doc - close the connection
 # each time we click on a tag, the browser connect to the web server and issues a 'get' request to GET the content of the
-# page at the specific url. The server then returns the HTML doc to the browser which formats and displays the docs
+# page at the specific url(uniform resouce locator). The server then returns the HTML doc to the browser which formats and displays the docs
 
 # browser is a piece of software running on computer
 #after the click, the browser determines which web server to connect to, which port to connect on the web server, and
@@ -25,6 +25,8 @@
 # the type of the file: text/html   2. then the content of the file
 # then the connection will close
 # this is how people HACK a computer
+
+
 
 
 # an HTTP Request in Python:
@@ -55,7 +57,7 @@ def assignment1():
 
     mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     mysock.connect(('data.pr4e.org', 80))
-    cmd = 'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\r\n\r\n'. encode()
+    cmd = 'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\r\n\r\n'. encode() #default as UTF8 : from unicode to byte
     mysock.send(cmd)
 
 
@@ -65,6 +67,8 @@ def assignment1():
             break
         print (data.decode())
 
+        #data is byte, after decoding, it becomes unicode
+
 
     mysock.close()
 
@@ -73,5 +77,5 @@ def assignment1():
 
 
 if __name__=='__main__':
-    assignment1()
+    lecture2()
 
